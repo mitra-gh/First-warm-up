@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  outline: 0;
+  font-family: IranSansX;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 16px;
+  background-color: #191818;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  width: 80%;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background: linear-gradient(0deg, #000, #272727);
+}
+
+.title {
+  color: white;
+  margin: 0px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.text-input {
+  border-radius: 8px;
+  border: 1px solid #fef655;
+  background-color: #191818;
+  color: white;
+  padding: 12px 8px;
+  font-size: 16px;
+  text-align: right;
+}
+
+.text-input::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+.section:before,
+.section:after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(
+    45deg,
+    #fb0094,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #ff0000,
+    #fb0094,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #ff0000
+  );
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: steam 20s linear infinite;
+  border-radius: 12px;
+}
+
+@keyframes steam {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+.section:after {
+  filter: blur(50px);
+}
+
+@font-face {
+  font-family: IranSansX;
+  src: url(./IRANSansX-Medium.woff2);
+}
